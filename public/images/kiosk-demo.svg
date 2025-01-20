@@ -1,0 +1,26 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#2D1B69"/>
+  <text x="400" y="100" font-family="Arial" font-size="36" fill="white" text-anchor="middle">Kiosk Demo</text>
+  
+  <!-- Multiple Screens -->
+  <g transform="translate(100, 200)">
+    <!-- Screen 1 -->
+    <rect x="0" y="0" width="180" height="300" rx="10" fill="#1A1A1A" stroke="white" stroke-width="2"/>
+    <text x="90" y="40" font-family="Arial" font-size="14" fill="#D1F879" text-anchor="middle">Buy EUR</text>
+    <rect x="20" y="60" width="140" height="30" rx="5" fill="#4CAF50" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(310, 200)">
+    <!-- Screen 2 -->
+    <rect x="0" y="0" width="180" height="300" rx="10" fill="#1A1A1A" stroke="white" stroke-width="2"/>
+    <text x="90" y="40" font-family="Arial" font-size="14" fill="#D1F879" text-anchor="middle">Sell USD</text>
+    <rect x="20" y="60" width="140" height="30" rx="5" fill="#2196F3" opacity="0.8"/>
+  </g>
+  
+  <g transform="translate(520, 200)">
+    <!-- Screen 3 -->
+    <rect x="0" y="0" width="180" height="300" rx="10" fill="#1A1A1A" stroke="white" stroke-width="2"/>
+    <text x="90" y="40" font-family="Arial" font-size="14" fill="#D1F879" text-anchor="middle">View Rates</text>
+    <rect x="20" y="60" width="140" height="30" rx="5" fill="#FFC107" opacity="0.8"/>
+  </g>
+</svg>

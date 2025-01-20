@@ -1,0 +1,10 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .primary { fill: #7C3AED; }
+    .secondary { fill: #A78BFA; }
+  </style>
+  <rect width="80" height="80" rx="20" fill="#F3E8FF"/>
+  <rect x="20" y="30" width="40" height="25" rx="4" class="primary"/>
+  <rect x="25" y="40" width="30" height="5" fill="white"/>
+  <path d="M40 20 L40 30 M30 20 L50 20" stroke="#7C3AED" stroke-width="4" stroke-linecap="round"/>
+</svg>

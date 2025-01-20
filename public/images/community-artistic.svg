@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Natural Skin Tones -->
+    <linearGradient id="skinTone1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE0B2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB74D;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Hair Gradients -->
+    <linearGradient id="purpleHairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7E57C2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#673AB7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5E35B1;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Clothing Gradients -->
+    <linearGradient id="yellowDress" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD54F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA000;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Complex Shadows -->
+    <filter id="artShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="3" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- First Character - Woman -->
+  <g transform="translate(200, 150)">
+    <!-- Natural Hair Shape -->
+    <path d="M50 0C80 0 100 20 100 50C100 80 80 120 50 120C20 120 0 80 0 50C0 20 20 0 50 0Z
+             M30 120C40 140 60 140 70 120
+             M20 50C30 70 70 70 80 50" 
+          fill="url(#purpleHairGradient)" filter="url(#artShadow)">
+      <animate attributeName="d" 
+               dur="4s" 
+               repeatCount="indefinite"
+               values="
+                 M50 0C80 0 100 20 100 50C100 80 80 120 50 120C20 120 0 80 0 50C0 20 20 0 50 0Z M30 120C40 140 60 140 70 120 M20 50C30 70 70 70 80 50;
+                 M50 0C85 0 105 20 105 50C105 80 85 125 50 125C15 125 -5 80 -5 50C-5 20 15 0 50 0Z M25 125C35 145 65 145 75 125 M15 50C25 70 75 70 85 50;
+                 M50 0C80 0 100 20 100 50C100 80 80 120 50 120C20 120 0 80 0 50C0 20 20 0 50 0Z M30 120C40 140 60 140 70 120 M20 50C30 70 70 70 80 50"
+      />
+    </path>
+
+    <!-- Face Features -->
+    <g transform="translate(50, 60)">
+      <!-- Eyes -->
+      <path d="M-15 0C-12 -2 -9 -2 -6 0C-9 2 -12 2 -15 0Z" fill="#424242">
+        <animate attributeName="d" 
+                 dur="3s"
+                 repeatCount="indefinite"
+                 values="
+                   M-15 0C-12 -2 -9 -2 -6 0C-9 2 -12 2 -15 0Z;
+                   M-15 1C-12 -1 -9 -1 -6 1C-9 3 -12 3 -15 1Z;
+                   M-15 0C-12 -2 -9 -2 -6 0C-9 2 -12 2 -15 0Z"
+        />
+      </path>
+      <path d="M6 0C9 -2 12 -2 15 0C12 2 9 2 6 0Z" fill="#424242">
+        <animate attributeName="d"
+                 dur="3s"
+                 repeatCount="indefinite"
+                 values="
+                   M6 0C9 -2 12 -2 15 0C12 2 9 2 6 0Z;
+                   M6 1C9 -1 12 -1 15 1C12 3 9 3 6 1Z;
+                   M6 0C9 -2 12 -2 15 0C12 2 9 2 6 0Z"
+        />
+      </path>
+
+      <!-- Natural Smile -->
+      <path d="M-10 15Q0 25 10 15" 
+            stroke="#424242" 
+            stroke-width="2" 
+            stroke-linecap="round"
+            fill="none">
+        <animate attributeName="d"
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="
+                   M-10 15Q0 25 10 15;
+                   M-10 17Q0 27 10 17;
+                   M-10 15Q0 25 10 15"
+        />
+      </path>
+    </g>
+
+    <!-- Yellow Dress -->
+    <path d="M20 120L80 120C90 180 70 220 50 220C30 220 10 180 20 120Z" 
+          fill="url(#yellowDress)"
+          filter="url(#artShadow)">
+      <animate attributeName="d"
+               dur="4s"
+               repeatCount="indefinite"
+               values="
+                 M20 120L80 120C90 180 70 220 50 220C30 220 10 180 20 120Z;
+                 M15 120L85 120C95 180 75 225 50 225C25 225 5 180 15 120Z;
+                 M20 120L80 120C90 180 70 220 50 220C30 220 10 180 20 120Z"
+      />
+    </path>
+  </g>
+
+  <!-- Second Character -->
+  <g transform="translate(500, 200)">
+    <!-- Similar structure with different colors and positions -->
+    <!-- Natural Hair Shape -->
+    <path d="M50 0C90 0 110 30 90 60C70 90 30 90 10 60C-10 30 10 0 50 0Z" 
+          fill="url(#purpleHairGradient)"
+          filter="url(#artShadow)">
+      <animate attributeName="d"
+               dur="4s"
+               repeatCount="indefinite"
+               values="
+                 M50 0C90 0 110 30 90 60C70 90 30 90 10 60C-10 30 10 0 50 0Z;
+                 M50 0C95 0 115 30 95 65C75 95 25 95 5 65C-15 35 5 0 50 0Z;
+                 M50 0C90 0 110 30 90 60C70 90 30 90 10 60C-10 30 10 0 50 0Z"
+      />
+    </path>
+
+    <!-- Face Features -->
+    <g transform="translate(50, 40)">
+      <!-- Eyes -->
+      <path d="M-15 0C-12 -2 -9 -2 -6 0C-9 2 -12 2 -15 0Z" fill="#424242">
+        <animate attributeName="d"
+                 dur="3s"
+                 repeatCount="indefinite"
+                 values="
+                   M-15 0C-12 -2 -9 -2 -6 0C-9 2 -12 2 -15 0Z;
+                   M-15 1C-12 -1 -9 -1 -6 1C-9 3 -12 3 -15 1Z;
+                   M-15 0C-12 -2 -9 -2 -6 0C-9 2 -12 2 -15 0Z"
+        />
+      </path>
+      <path d="M6 0C9 -2 12 -2 15 0C12 2 9 2 6 0Z" fill="#424242">
+        <animate attributeName="d"
+                 dur="3s"
+                 repeatCount="indefinite"
+                 values="
+                   M6 0C9 -2 12 -2 15 0C12 2 9 2 6 0Z;
+                   M6 1C9 -1 12 -1 15 1C12 3 9 3 6 1Z;
+                   M6 0C9 -2 12 -2 15 0C12 2 9 2 6 0Z"
+        />
+      </path>
+
+      <!-- Natural Smile -->
+      <path d="M-10 15Q0 25 10 15"
+            stroke="#424242"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none">
+        <animate attributeName="d"
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="
+                   M-10 15Q0 25 10 15;
+                   M-10 17Q0 27 10 17;
+                   M-10 15Q0 25 10 15"
+        />
+      </path>
+    </g>
+
+    <!-- Clothing -->
+    <path d="M20 80L80 80C90 140 70 180 50 180C30 180 10 140 20 80Z"
+          fill="#4CAF50"
+          filter="url(#artShadow)">
+      <animate attributeName="d"
+               dur="4s"
+               repeatCount="indefinite"
+               values="
+                 M20 80L80 80C90 140 70 180 50 180C30 180 10 140 20 80Z;
+                 M15 80L85 80C95 140 75 185 50 185C25 185 5 140 15 80Z;
+                 M20 80L80 80C90 140 70 180 50 180C30 180 10 140 20 80Z"
+      />
+    </path>
+  </g>
+
+  <!-- Connection Lines -->
+  <g>
+    <path d="M300 200C350 225 450 225 500 250"
+          stroke="#673AB7"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+          opacity="0.6">
+      <animate attributeName="stroke-dashoffset"
+               values="0;-20"
+               dur="1s"
+               repeatCount="indefinite"/>
+    </path>
+    <path d="M300 250C350 275 450 275 500 300"
+          stroke="#673AB7"
+          stroke-width="2"
+          stroke-dasharray="4 4"
+          opacity="0.6">
+      <animate attributeName="stroke-dashoffset"
+               values="0;-20"
+               dur="1s"
+               repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Floating Elements -->
+  <g>
+    <!-- Social Media Icons -->
+    <g transform="translate(150, 100)">
+      <circle cx="0" cy="0" r="20" fill="#E4405F">
+        <animate attributeName="r"
+                 values="20;22;20"
+                 dur="2s"
+                 repeatCount="indefinite"/>
+        <animate attributeName="cy"
+                 values="0;-10;0"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+      </circle>
+      <path d="M-8 -8h16v16h-16z" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="0" cy="0" r="4" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="6" cy="-6" r="1.5" fill="white"/>
+    </g>
+
+    <g transform="translate(650, 150)">
+      <circle cx="0" cy="0" r="20" fill="#1DA1F2">
+        <animate attributeName="r"
+                 values="20;22;20"
+                 dur="2.5s"
+                 repeatCount="indefinite"/>
+        <animate attributeName="cy"
+                 values="0;10;0"
+                 dur="4s"
+                 repeatCount="indefinite"/>
+      </circle>
+      <path d="M-6 2c7-4 10-6 10-7-1-2-2-3-3-3" stroke="white" stroke-width="2" fill="none"/>
+      <path d="M-6 2c4-6 7-9 10-9" stroke="white" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Decorative Background -->
+  <g>
+    <circle cx="200" cy="400" r="4" fill="#673AB7" opacity="0.3">
+      <animate attributeName="cy"
+               values="400;390;400"
+               dur="3s"
+               repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="200" r="5" fill="#FFC107" opacity="0.3">
+      <animate attributeName="cy"
+               values="200;210;200"
+               dur="4s"
+               repeatCount="indefinite"/>
+    </circle>
+    <path d="M300 500Q400 450 500 500"
+          stroke="#673AB7"
+          stroke-width="1"
+          stroke-dasharray="3 3"
+          opacity="0.4">
+      <animate attributeName="d"
+               dur="5s"
+               repeatCount="indefinite"
+               values="
+                 M300 500Q400 450 500 500;
+                 M300 510Q400 440 500 510;
+                 M300 500Q400 450 500 500"/>
+    </path>
+  </g>
+</svg>

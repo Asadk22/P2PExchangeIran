@@ -1,0 +1,10 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .primary { fill: #7C3AED; }
+    .secondary { fill: #A78BFA; }
+  </style>
+  <rect width="80" height="80" rx="20" fill="#F3E8FF"/>
+  <circle cx="30" cy="40" r="15" class="primary"/>
+  <circle cx="50" cy="40" r="15" class="secondary"/>
+  <path d="M40 25 L40 55" stroke="white" stroke-width="4"/>
+</svg>

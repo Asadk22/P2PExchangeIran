@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="50" viewBox="0 0 600 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Placeholder company logos -->
+  <text x="30" y="35" font-family="Arial" font-size="24" fill="#333333">Forbes</text>
+  <text x="150" y="35" font-family="Arial" font-size="24" fill="#333333">Bloomberg</text>
+  <text x="320" y="35" font-family="Arial" font-size="24" fill="#333333">Reuters</text>
+  <text x="450" y="35" font-family="Arial" font-size="24" fill="#333333">TechCrunch</text>
+</svg>

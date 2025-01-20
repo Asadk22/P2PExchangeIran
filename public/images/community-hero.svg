@@ -1,0 +1,14 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_community)">
+    <rect width="600" height="400" fill="white"/>
+    <circle cx="300" cy="200" r="150" fill="#4CAF50" fill-opacity="0.1"/>
+    <path d="M250 150C250 122.386 272.386 100 300 100V100C327.614 100 350 122.386 350 150V250C350 277.614 327.614 300 300 300V300C272.386 300 250 277.614 250 250V150Z" fill="#4CAF50" fill-opacity="0.2"/>
+    <circle cx="300" cy="200" r="50" fill="#4CAF50"/>
+    <path d="M290 190L300 200L310 190M300 180V220" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_community">
+      <rect width="600" height="400" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

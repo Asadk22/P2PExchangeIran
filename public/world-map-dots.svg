@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- World Map Dots Grid -->
+  <g opacity="0.5">
+    <circle cx="720" cy="400" r="2" fill="#c5f82a"/>
+    <!-- Generate a grid of dots representing the world map -->
+    <g id="americas">
+      <!-- North and South America dots -->
+      <circle cx="300" cy="200" r="2" fill="#c5f82a"/>
+      <circle cx="320" cy="220" r="2" fill="#c5f82a"/>
+      <circle cx="340" cy="240" r="2" fill="#c5f82a"/>
+      <circle cx="280" cy="260" r="2" fill="#c5f82a"/>
+      <circle cx="300" cy="280" r="2" fill="#c5f82a"/>
+      <circle cx="320" cy="300" r="2" fill="#c5f82a"/>
+      <circle cx="340" cy="320" r="2" fill="#c5f82a"/>
+      <circle cx="360" cy="340" r="2" fill="#c5f82a"/>
+    </g>
+    <g id="europe">
+      <!-- Europe dots -->
+      <circle cx="600" cy="200" r="2" fill="#c5f82a"/>
+      <circle cx="620" cy="180" r="2" fill="#c5f82a"/>
+      <circle cx="640" cy="160" r="2" fill="#c5f82a"/>
+      <circle cx="660" cy="180" r="2" fill="#c5f82a"/>
+      <circle cx="680" cy="200" r="2" fill="#c5f82a"/>
+      <circle cx="700" cy="220" r="2" fill="#c5f82a"/>
+    </g>
+    <g id="asia">
+      <!-- Asia dots -->
+      <circle cx="800" cy="200" r="2" fill="#c5f82a"/>
+      <circle cx="820" cy="220" r="2" fill="#c5f82a"/>
+      <circle cx="840" cy="240" r="2" fill="#c5f82a"/>
+      <circle cx="860" cy="260" r="2" fill="#c5f82a"/>
+      <circle cx="880" cy="280" r="2" fill="#c5f82a"/>
+      <circle cx="900" cy="300" r="2" fill="#c5f82a"/>
+    </g>
+    <g id="africa">
+      <!-- Africa dots -->
+      <circle cx="600" cy="400" r="2" fill="#c5f82a"/>
+      <circle cx="620" cy="420" r="2" fill="#c5f82a"/>
+      <circle cx="640" cy="440" r="2" fill="#c5f82a"/>
+      <circle cx="660" cy="460" r="2" fill="#c5f82a"/>
+      <circle cx="680" cy="480" r="2" fill="#c5f82a"/>
+    </g>
+    <g id="oceania">
+      <!-- Oceania dots -->
+      <circle cx="1000" cy="500" r="2" fill="#c5f82a"/>
+      <circle cx="1020" cy="520" r="2" fill="#c5f82a"/>
+      <circle cx="1040" cy="540" r="2" fill="#c5f82a"/>
+      <circle cx="1060" cy="560" r="2" fill="#c5f82a"/>
+    </g>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g opacity="0.2">
+    <path d="M300 200 L620 180" stroke="#c5f82a" stroke-width="1"/>
+    <path d="M620 180 L800 200" stroke="#c5f82a" stroke-width="1"/>
+    <path d="M800 200 L1000 500" stroke="#c5f82a" stroke-width="1"/>
+    <path d="M600 400 L800 200" stroke="#c5f82a" stroke-width="1"/>
+  </g>
+</svg>

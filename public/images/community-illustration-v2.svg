@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Complex Gradients -->
+    <linearGradient id="skinGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE0B2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB74D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skinGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE0B2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB74D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="yellowShirtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDD835;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F9A825;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueShirtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1976D2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Pattern -->
+  <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#F0F0F0" stroke-width="0.5"/>
+  </pattern>
+  <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+    <rect width="100" height="100" fill="url(#smallGrid)"/>
+    <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#E0E0E0" stroke-width="1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.1"/>
+
+  <!-- First Chat Window -->
+  <g transform="translate(100, 50)">
+    <!-- Window Frame -->
+    <path d="M0 10C0 4.47715 4.47715 0 10 0H290C295.523 0 300 4.47715 300 10V240C300 245.523 295.523 250 290 250H10C4.47715 250 0 245.523 0 240V10Z" fill="white" filter="url(#dropShadow)"/>
+    
+    <!-- Title Bar -->
+    <path d="M0 10C0 4.47715 4.47715 0 10 0H290C295.523 0 300 4.47715 300 10V30H0V10Z" fill="#F3F4F6"/>
+    
+    <!-- Window Controls -->
+    <circle cx="20" cy="15" r="5" fill="#FF5F57"/>
+    <circle cx="40" cy="15" r="5" fill="#FEBC2E"/>
+    <circle cx="60" cy="15" r="5" fill="#28C840"/>
+    
+    <!-- Person 1 -->
+    <g transform="translate(40, 60)">
+      <!-- Complex Hair -->
+      <path d="M30 0C50 0 65 15 65 35C65 55 50 70 30 70C10 70 -5 55 -5 35C-5 15 10 0 30 0Z" fill="#553C9A"/>
+      <path d="M30 5C48 5 60 18 60 35C60 52 48 65 30 65C12 65 0 52 0 35C0 18 12 5 30 5Z" fill="#6B46C1"/>
+      
+      <!-- Detailed Face -->
+      <path d="M15 25C25 15 35 15 45 25C45 45 35 60 30 60C25 60 15 45 15 25Z" fill="url(#skinGradient1)"/>
+      
+      <!-- Eyes with Details -->
+      <g transform="translate(22, 35)">
+        <ellipse cx="0" cy="0" rx="4" ry="5" fill="#2D3748"/>
+        <circle cx="-1" cy="-1" r="1" fill="white"/>
+      </g>
+      <g transform="translate(38, 35)">
+        <ellipse cx="0" cy="0" rx="4" ry="5" fill="#2D3748"/>
+        <circle cx="-1" cy="-1" r="1" fill="white"/>
+      </g>
+      
+      <!-- Detailed Smile -->
+      <path d="M25 45Q30 50 35 45" stroke="#2D3748" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Yellow Shirt with Details -->
+      <path d="M10 70L50 70L60 140H0L10 70Z" fill="url(#yellowShirtGradient)"/>
+      <path d="M10 70L50 70L55 90L5 90L10 70Z" fill="#FDD835" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Second Chat Window -->
+  <g transform="translate(400, 200)">
+    <!-- Window Frame -->
+    <path d="M0 10C0 4.47715 4.47715 0 10 0H290C295.523 0 300 4.47715 300 10V240C300 245.523 295.523 250 290 250H10C4.47715 250 0 245.523 0 240V10Z" fill="white" filter="url(#dropShadow)"/>
+    
+    <!-- Title Bar -->
+    <path d="M0 10C0 4.47715 4.47715 0 10 0H290C295.523 0 300 4.47715 300 10V30H0V10Z" fill="#F3F4F6"/>
+    
+    <!-- Window Controls -->
+    <circle cx="20" cy="15" r="5" fill="#FF5F57"/>
+    <circle cx="40" cy="15" r="5" fill="#FEBC2E"/>
+    <circle cx="60" cy="15" r="5" fill="#28C840"/>
+    
+    <!-- Person 2 -->
+    <g transform="translate(40, 60)">
+      <!-- Complex Hair -->
+      <path d="M30 0C60 0 80 40 60 60C40 80 20 60 0 60C-20 40 0 0 30 0Z" fill="#6B46C1"/>
+      <path d="M30 5C55 5 70 35 55 55C40 75 20 55 5 55C-10 35 5 5 30 5Z" fill="#805AD5"/>
+      
+      <!-- Detailed Face -->
+      <path d="M15 25C25 15 35 15 45 25C45 45 35 60 30 60C25 60 15 45 15 25Z" fill="url(#skinGradient2)"/>
+      
+      <!-- Eyes with Details -->
+      <g transform="translate(22, 35)">
+        <ellipse cx="0" cy="0" rx="4" ry="5" fill="#2D3748"/>
+        <circle cx="-1" cy="-1" r="1" fill="white"/>
+      </g>
+      <g transform="translate(38, 35)">
+        <ellipse cx="0" cy="0" rx="4" ry="5" fill="#2D3748"/>
+        <circle cx="-1" cy="-1" r="1" fill="white"/>
+      </g>
+      
+      <!-- Detailed Smile -->
+      <path d="M25 45Q30 50 35 45" stroke="#2D3748" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Blue Shirt with Details -->
+      <path d="M10 70L50 70L60 140H0L10 70Z" fill="url(#blueShirtGradient)"/>
+      <path d="M10 70L50 70L55 90L5 90L10 70Z" fill="#2196F3" opacity="0.3"/>
+    </g>
+  </g>
+
+  <!-- Connecting Elements -->
+  <g>
+    <!-- Animated Connection Lines -->
+    <path d="M350 150C400 175 450 175 500 200" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;-20" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M350 200C400 225 450 225 500 250" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;-20" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Floating Social Icons -->
+  <g>
+    <!-- Instagram -->
+    <g transform="translate(50, 300)">
+      <circle cx="0" cy="0" r="20" fill="#E4405F">
+        <animate attributeName="cy" values="0;-10;0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="-10" y="-10" width="20" height="20" rx="5" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="0" cy="0" r="5" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="7" cy="-7" r="2" fill="white"/>
+    </g>
+
+    <!-- Twitter -->
+    <g transform="translate(700, 150)">
+      <circle cx="0" cy="0" r="20" fill="#1DA1F2">
+        <animate attributeName="cy" values="0;10;0" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M-10 0C-10 -8 -5 -10 0 -10C5 -10 10 -8 10 0C10 8 5 10 0 10C-5 10 -10 8 -10 0" fill="none" stroke="white" stroke-width="2"/>
+      <path d="M-6 0L0 6L6 0" fill="none" stroke="white" stroke-width="2"/>
+    </g>
+
+    <!-- YouTube -->
+    <g transform="translate(650, 450)">
+      <circle cx="0" cy="0" r="20" fill="#FF0000">
+        <animate attributeName="cy" values="0;-10;0" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M-8 -5L8 0L-8 5Z" fill="white"/>
+    </g>
+  </g>
+
+  <!-- Decorative Elements -->
+  <g>
+    <!-- Floating Shapes -->
+    <circle cx="200" cy="400" r="4" fill="#4CAF50" opacity="0.3">
+      <animate attributeName="cy" values="400;390;400" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="600" cy="200" r="5" fill="#FFD700" opacity="0.3">
+      <animate attributeName="cy" values="200;210;200" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="100" r="6" fill="#FF4444" opacity="0.3">
+      <animate attributeName="cy" values="100;90;100" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Background Patterns -->
+    <path d="M300 500Q400 450 500 500" stroke="#6B7280" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+    <path d="M100 200Q150 150 200 200" stroke="#6B7280" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+  </g>
+
+  <!-- Additional UI Elements -->
+  <g>
+    <!-- Chat Bubbles -->
+    <g transform="translate(150, 150)">
+      <rect x="0" y="0" width="100" height="40" rx="20" fill="#F3F4F6"/>
+      <circle cx="10" cy="20" r="3" fill="#6B7280"/>
+      <circle cx="25" cy="20" r="3" fill="#6B7280"/>
+      <circle cx="40" cy="20" r="3" fill="#6B7280"/>
+    </g>
+    <g transform="translate(450, 300)">
+      <rect x="0" y="0" width="100" height="40" rx="20" fill="#F3F4F6"/>
+      <circle cx="10" cy="20" r="3" fill="#6B7280"/>
+      <circle cx="25" cy="20" r="3" fill="#6B7280"/>
+      <circle cx="40" cy="20" r="3" fill="#6B7280"/>
+    </g>
+  </g>
+</svg>

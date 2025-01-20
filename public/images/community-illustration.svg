@@ -1,0 +1,42 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="200" cy="150" r="20" fill="#FFD700" opacity="0.6"/>
+  <circle cx="600" cy="300" r="15" fill="#4CAF50" opacity="0.6"/>
+  <circle cx="400" cy="450" r="18" fill="#FF4444" opacity="0.6"/>
+  
+  <!-- Dotted Connection Lines -->
+  <path d="M200 150 Q 400 250 600 300" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M200 150 Q 300 350 400 450" stroke="#6B7280" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Window Frames -->
+  <rect x="100" y="100" width="300" height="200" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <rect x="110" y="110" width="280" height="20" rx="5" fill="#F3F4F6"/>
+  <circle cx="120" cy="120" r="3" fill="#FF6B6B"/>
+  <circle cx="130" cy="120" r="3" fill="#FFD93D"/>
+  <circle cx="140" cy="120" r="3" fill="#6BCB77"/>
+  
+  <rect x="400" y="250" width="300" height="200" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+  <rect x="410" y="260" width="280" height="20" rx="5" fill="#F3F4F6"/>
+  <circle cx="420" cy="270" r="3" fill="#FF6B6B"/>
+  <circle cx="430" cy="270" r="3" fill="#FFD93D"/>
+  <circle cx="440" cy="270" r="3" fill="#6BCB77"/>
+  
+  <!-- Person 1 -->
+  <rect x="150" y="150" width="200" height="130" rx="10" fill="#F0F9FF"/>
+  <circle cx="220" cy="190" r="30" fill="#4B5563"/>
+  <path d="M200 230 Q 220 250 240 230" stroke="#4B5563" stroke-width="2"/>
+  <rect x="180" y="240" width="80" height="4" rx="2" fill="#6B7280"/>
+  <rect x="180" y="250" width="60" height="4" rx="2" fill="#6B7280"/>
+  
+  <!-- Person 2 -->
+  <rect x="450" y="300" width="200" height="130" rx="10" fill="#F0F9FF"/>
+  <circle cx="520" cy="340" r="30" fill="#4B5563"/>
+  <path d="M500 380 Q 520 400 540 380" stroke="#4B5563" stroke-width="2"/>
+  <rect x="480" y="390" width="80" height="4" rx="2" fill="#6B7280"/>
+  <rect x="480" y="400" width="60" height="4" rx="2" fill="#6B7280"/>
+  
+  <!-- Social Icons -->
+  <circle cx="150" cy="100" r="15" fill="#E4405F"/>
+  <circle cx="650" cy="400" r="15" fill="#1DA1F2"/>
+  <circle cx="350" cy="500" r="15" fill="#FF0000"/>
+</svg>

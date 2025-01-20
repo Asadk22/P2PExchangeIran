@@ -1,0 +1,14 @@
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_connect)">
+    <rect width="800" height="300" fill="white"/>
+    <circle cx="400" cy="150" r="100" fill="#4CAF50" fill-opacity="0.1"/>
+    <path d="M350 100C350 82.3858 364.386 68 382 68H418C435.614 68 450 82.3858 450 100V200C450 217.614 435.614 232 418 232H382C364.386 232 350 217.614 350 200V100Z" fill="#4CAF50" fill-opacity="0.2"/>
+    <circle cx="400" cy="150" r="30" fill="#4CAF50"/>
+    <path d="M390 150H410M400 140V160" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_connect">
+      <rect width="800" height="300" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="600" viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone frame -->
+  <rect x="20" y="10" width="260" height="580" rx="30" stroke="#c5f82a" stroke-width="4" fill="none"/>
+  <!-- Screen -->
+  <rect x="30" y="20" width="240" height="560" rx="25" fill="#1a1a1a"/>
+  <!-- App UI elements -->
+  <rect x="50" y="50" width="200" height="60" rx="10" fill="#c5f82a" fill-opacity="0.2"/>
+  <rect x="50" y="130" width="200" height="40" rx="8" fill="#c5f82a" fill-opacity="0.1"/>
+  <rect x="50" y="190" width="200" height="40" rx="8" fill="#c5f82a" fill-opacity="0.1"/>
+  <rect x="50" y="250" width="200" height="200" rx="15" fill="#c5f82a" fill-opacity="0.05"/>
+  <circle cx="150" cy="550" r="25" fill="#c5f82a"/>
+</svg>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Enhanced Natural Gradients -->
+    <linearGradient id="skinToneEnhanced" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFDBB2;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#FFE0B2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFCC80;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#FFB74D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA726;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Complex Hair Gradients -->
+    <linearGradient id="artisticHair" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9575CD;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#7E57C2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#673AB7;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#5E35B1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#512DA8;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Artistic Clothing Gradients -->
+    <linearGradient id="dressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE082;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#FFD54F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFCA28;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#FFC107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB300;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Enhanced Shadows -->
+    <filter id="artisticShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="4" dy="4" result="offsetblur"/>
+      <feFlood flood-color="#000000"/>
+      <feComposite in2="offsetblur" operator="in"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+
+    <!-- Artistic Texture Pattern -->
+    <pattern id="artisticPattern" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M0 25C12.5 25 12.5 0 25 0S37.5 25 50 25" 
+            fill="none" 
+            stroke="#F5F5F5" 
+            stroke-width="0.5"/>
+      <path d="M0 25C12.5 25 12.5 50 25 50S37.5 25 50 25" 
+            fill="none" 
+            stroke="#F5F5F5" 
+            stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Artistic Background -->
+  <rect width="100%" height="100%" fill="url(#artisticPattern)"/>
+
+  <!-- First Character Group -->
+  <g transform="translate(200, 150)">
+    <!-- Enhanced Hair with Natural Flow -->
+    <path d="M50 0C90 0 110 30 90 70C70 110 30 110 10 70C-10 30 10 0 50 0Z
+             M30 110C40 130 60 130 70 110
+             M20 40C30 60 70 60 80 40
+             M0 50C10 80 90 80 100 50"
+          fill="url(#artisticHair)"
+          filter="url(#artisticShadow)">
+      <animate attributeName="d"
+               dur="6s"
+               repeatCount="indefinite"
+               values="
+                 M50 0C90 0 110 30 90 70C70 110 30 110 10 70C-10 30 10 0 50 0Z M30 110C40 130 60 130 70 110 M20 40C30 60 70 60 80 40 M0 50C10 80 90 80 100 50;
+                 M50 0C95 0 115 35 95 75C75 115 25 115 5 75C-15 35 5 0 50 0Z M25 115C35 135 65 135 75 115 M15 45C25 65 75 65 85 45 M-5 55C5 85 95 85 105 55;
+                 M50 0C90 0 110 30 90 70C70 110 30 110 10 70C-10 30 10 0 50 0Z M30 110C40 130 60 130 70 110 M20 40C30 60 70 60 80 40 M0 50C10 80 90 80 100 50"
+      />
+    </path>
+
+    <!-- Enhanced Face with More Expression -->
+    <g transform="translate(50, 60)">
+      <!-- Artistic Eyes -->
+      <g>
+        <!-- Left Eye -->
+        <path d="M-20 0Q-15 -5 -10 0Q-15 5 -20 0Z" fill="#424242">
+          <animate attributeName="d"
+                   dur="4s"
+                   repeatCount="indefinite"
+                   values="
+                     M-20 0Q-15 -5 -10 0Q-15 5 -20 0Z;
+                     M-20 1Q-15 -4 -10 1Q-15 6 -20 1Z;
+                     M-20 0Q-15 -5 -10 0Q-15 5 -20 0Z"
+          />
+        </path>
+        <circle cx="-13" cy="-1" r="1.5" fill="white"/>
+        
+        <!-- Right Eye -->
+        <path d="M10 0Q15 -5 20 0Q15 5 10 0Z" fill="#424242">
+          <animate attributeName="d"
+                   dur="4s"
+                   repeatCount="indefinite"
+                   values="
+                     M10 0Q15 -5 20 0Q15 5 10 0Z;
+                     M10 1Q15 -4 20 1Q15 6 10 1Z;
+                     M10 0Q15 -5 20 0Q15 5 10 0Z"
+          />
+        </path>
+        <circle cx="17" cy="-1" r="1.5" fill="white"/>
+      </g>
+
+      <!-- Enhanced Smile -->
+      <path d="M-15 15Q0 30 15 15"
+            stroke="#424242"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none">
+        <animate attributeName="d"
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="
+                   M-15 15Q0 30 15 15;
+                   M-15 17Q0 32 15 17;
+                   M-15 15Q0 30 15 15"
+        />
+      </path>
+
+      <!-- Artistic Blush -->
+      <circle cx="-25" cy="10" r="5" fill="#FFB6C1" opacity="0.3"/>
+      <circle cx="25" cy="10" r="5" fill="#FFB6C1" opacity="0.3"/>
+    </g>
+
+    <!-- Enhanced Dress with Natural Flow -->
+    <path d="M20 110L80 110C95 170 75 230 50 230C25 230 5 170 20 110Z
+             M30 110C40 150 60 150 70 110"
+          fill="url(#dressGradient)"
+          filter="url(#artisticShadow)">
+      <animate attributeName="d"
+               dur="5s"
+               repeatCount="indefinite"
+               values="
+                 M20 110L80 110C95 170 75 230 50 230C25 230 5 170 20 110Z M30 110C40 150 60 150 70 110;
+                 M15 110L85 110C100 170 80 235 50 235C20 235 0 170 15 110Z M25 110C35 150 65 150 75 110;
+                 M20 110L80 110C95 170 75 230 50 230C25 230 5 170 20 110Z M30 110C40 150 60 150 70 110"
+      />
+    </path>
+  </g>
+
+  <!-- Second Character Group -->
+  <g transform="translate(500, 200)">
+    <!-- Enhanced Hair -->
+    <path d="M50 0C100 0 120 40 100 80C80 120 20 120 0 80C-20 40 0 0 50 0Z
+             M30 120C40 140 60 140 70 120
+             M10 50C20 80 80 80 90 50"
+          fill="url(#artisticHair)"
+          filter="url(#artisticShadow)">
+      <animate attributeName="d"
+               dur="6s"
+               repeatCount="indefinite"
+               values="
+                 M50 0C100 0 120 40 100 80C80 120 20 120 0 80C-20 40 0 0 50 0Z M30 120C40 140 60 140 70 120 M10 50C20 80 80 80 90 50;
+                 M50 0C105 0 125 45 105 85C85 125 15 125 -5 85C-25 45 -5 0 50 0Z M25 125C35 145 65 145 75 125 M5 55C15 85 85 85 95 55;
+                 M50 0C100 0 120 40 100 80C80 120 20 120 0 80C-20 40 0 0 50 0Z M30 120C40 140 60 140 70 120 M10 50C20 80 80 80 90 50"
+      />
+    </path>
+
+    <!-- Enhanced Face -->
+    <g transform="translate(50, 60)">
+      <!-- Artistic Eyes -->
+      <g>
+        <path d="M-20 0Q-15 -5 -10 0Q-15 5 -20 0Z" fill="#424242">
+          <animate attributeName="d"
+                   dur="4s"
+                   repeatCount="indefinite"
+                   values="
+                     M-20 0Q-15 -5 -10 0Q-15 5 -20 0Z;
+                     M-20 1Q-15 -4 -10 1Q-15 6 -20 1Z;
+                     M-20 0Q-15 -5 -10 0Q-15 5 -20 0Z"
+          />
+        </path>
+        <circle cx="-13" cy="-1" r="1.5" fill="white"/>
+        
+        <path d="M10 0Q15 -5 20 0Q15 5 10 0Z" fill="#424242">
+          <animate attributeName="d"
+                   dur="4s"
+                   repeatCount="indefinite"
+                   values="
+                     M10 0Q15 -5 20 0Q15 5 10 0Z;
+                     M10 1Q15 -4 20 1Q15 6 10 1Z;
+                     M10 0Q15 -5 20 0Q15 5 10 0Z"
+          />
+        </path>
+        <circle cx="17" cy="-1" r="1.5" fill="white"/>
+      </g>
+
+      <!-- Enhanced Smile -->
+      <path d="M-15 15Q0 30 15 15"
+            stroke="#424242"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none">
+        <animate attributeName="d"
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="
+                   M-15 15Q0 30 15 15;
+                   M-15 17Q0 32 15 17;
+                   M-15 15Q0 30 15 15"
+        />
+      </path>
+
+      <!-- Artistic Blush -->
+      <circle cx="-25" cy="10" r="5" fill="#FFB6C1" opacity="0.3"/>
+      <circle cx="25" cy="10" r="5" fill="#FFB6C1" opacity="0.3"/>
+    </g>
+
+    <!-- Enhanced Clothing -->
+    <path d="M20 120L80 120C95 180 75 240 50 240C25 240 5 180 20 120Z
+             M30 120C40 160 60 160 70 120"
+          fill="#4CAF50"
+          filter="url(#artisticShadow)">
+      <animate attributeName="d"
+               dur="5s"
+               repeatCount="indefinite"
+               values="
+                 M20 120L80 120C95 180 75 240 50 240C25 240 5 180 20 120Z M30 120C40 160 60 160 70 120;
+                 M15 120L85 120C100 180 80 245 50 245C20 245 0 180 15 120Z M25 120C35 160 65 160 75 120;
+                 M20 120L80 120C95 180 75 240 50 240C25 240 5 180 20 120Z M30 120C40 160 60 160 70 120"
+      />
+    </path>
+  </g>
+
+  <!-- Enhanced Connection Lines -->
+  <g>
+    <!-- Artistic Flow Lines -->
+    <path d="M300 200C350 225 450 225 500 250"
+          stroke="url(#artisticHair)"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-dasharray="5 5"
+          opacity="0.6">
+      <animate attributeName="stroke-dashoffset"
+               values="0;-20"
+               dur="2s"
+               repeatCount="indefinite"/>
+      <animate attributeName="d"
+               dur="5s"
+               repeatCount="indefinite"
+               values="
+                 M300 200C350 225 450 225 500 250;
+                 M300 210C350 235 450 235 500 260;
+                 M300 200C350 225 450 225 500 250"
+      />
+    </path>
+    
+    <path d="M300 250C350 275 450 275 500 300"
+          stroke="url(#artisticHair)"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-dasharray="5 5"
+          opacity="0.6">
+      <animate attributeName="stroke-dashoffset"
+               values="0;-20"
+               dur="2s"
+               repeatCount="indefinite"/>
+      <animate attributeName="d"
+               dur="5s"
+               repeatCount="indefinite"
+               values="
+                 M300 250C350 275 450 275 500 300;
+                 M300 260C350 285 450 285 500 310;
+                 M300 250C350 275 450 275 500 300"
+      />
+    </path>
+  </g>
+
+  <!-- Enhanced Floating Elements -->
+  <g>
+    <!-- Artistic Social Icons -->
+    <g transform="translate(150, 100)">
+      <circle cx="0" cy="0" r="25" fill="#E4405F">
+        <animate attributeName="r"
+                 values="25;27;25"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+        <animate attributeName="cy"
+                 values="0;-15;0"
+                 dur="4s"
+                 repeatCount="indefinite"/>
+      </circle>
+      <path d="M-10 -10h20v20h-20z"
+            fill="none"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="5"
+              fill="none"
+              stroke="white"
+              stroke-width="2.5"/>
+      <circle cx="7" cy="-7" r="2" fill="white"/>
+    </g>
+
+    <g transform="translate(650, 150)">
+      <circle cx="0" cy="0" r="25" fill="#1DA1F2">
+        <animate attributeName="r"
+                 values="25;27;25"
+                 dur="3.5s"
+                 repeatCount="indefinite"/>
+        <animate attributeName="cy"
+                 values="0;15;0"
+                 dur="4.5s"
+                 repeatCount="indefinite"/>
+      </circle>
+      <path d="M-8 4c9-5 13-8 13-9-1-3-2-4-3-4"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none"/>
+      <path d="M-8 4c5-8 10-12 13-12"
+            stroke="white"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            fill="none"/>
+    </g>
+  </g>
+
+  <!-- Enhanced Decorative Elements -->
+  <g>
+    <!-- Artistic Floating Dots -->
+    <g>
+      <circle cx="200" cy="400" r="6" fill="url(#artisticHair)" opacity="0.4">
+        <animate attributeName="cy"
+                 values="400;385;400"
+                 dur="4s"
+                 repeatCount="indefinite"/>
+        <animate attributeName="r"
+                 values="6;8;6"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="600" cy="200" r="7" fill="url(#dressGradient)" opacity="0.4">
+        <animate attributeName="cy"
+                 values="200;215;200"
+                 dur="5s"
+                 repeatCount="indefinite"/>
+        <animate attributeName="r"
+                 values="7;9;7"
+                 dur="3.5s"
+                 repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Artistic Curves -->
+    <path d="M300 500Q400 450 500 500"
+          stroke="url(#artisticHair)"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-dasharray="5 5"
+          opacity="0.4">
+      <animate attributeName="d"
+               dur="6s"
+               repeatCount="indefinite"
+               values="
+                 M300 500Q400 450 500 500;
+                 M300 515Q400 435 500 515;
+                 M300 500Q400 450 500 500"
+      />
+    </path>
+  </g>
+</svg>

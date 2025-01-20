@@ -1,0 +1,12 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .primary { fill: #4F46E5; }
+    .secondary { fill: #6B7280; }
+    .accent { fill: #E5E7EB; }
+  </style>
+  <rect width="400" height="300" fill="white"/>
+  <path d="M50 250 L150 150 L250 200 L350 50" class="primary" stroke-width="4" fill="none"/>
+  <circle cx="150" cy="150" r="8" class="primary"/>
+  <circle cx="250" cy="200" r="8" class="primary"/>
+  <circle cx="350" cy="50" r="8" class="primary"/>
+</svg>

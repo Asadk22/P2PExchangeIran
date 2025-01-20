@@ -1,0 +1,22 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#2D1B69"/>
+  <text x="400" y="250" font-family="Arial" font-size="36" fill="white" text-anchor="middle">Virtual Exchange Kiosk</text>
+  <text x="400" y="300" font-family="Arial" font-size="24" fill="#D1F879" text-anchor="middle">Modern Currency Exchange Solution</text>
+  
+  <!-- Kiosk Screen -->
+  <rect x="250" y="150" width="300" height="400" rx="20" fill="none" stroke="white" stroke-width="4"/>
+  
+  <!-- Screen Content -->
+  <rect x="270" y="170" width="260" height="360" rx="10" fill="#1A1A1A"/>
+  
+  <!-- Exchange Rate Display -->
+  <text x="400" y="220" font-family="Arial" font-size="18" fill="#D1F879" text-anchor="middle">EUR/USD: 1.0950</text>
+  <text x="400" y="250" font-family="Arial" font-size="18" fill="#D1F879" text-anchor="middle">GBP/USD: 1.2750</text>
+  
+  <!-- Interface Elements -->
+  <rect x="300" y="300" width="200" height="40" rx="5" fill="#4CAF50" opacity="0.8"/>
+  <text x="400" y="325" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Exchange Now</text>
+  
+  <rect x="300" y="360" width="200" height="40" rx="5" fill="#2196F3" opacity="0.8"/>
+  <text x="400" y="385" font-family="Arial" font-size="16" fill="white" text-anchor="middle">View Rates</text>
+</svg>

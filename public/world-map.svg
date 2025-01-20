@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M400 200 C400 89.543 310.457 0 200 0 C89.543 0 0 89.543 0 200 C0 310.457 89.543 400 200 400 C310.457 400 400 310.457 400 200" fill="#c5f82a" fill-opacity="0.1"/>
+  <path d="M800 200 C800 89.543 710.457 0 600 0 C489.543 0 400 89.543 400 200 C400 310.457 489.543 400 600 400 C710.457 400 800 310.457 800 200" fill="#c5f82a" fill-opacity="0.1"/>
+  <!-- Add simplified continent outlines -->
+  <path d="M150 100 L250 150 L200 250 L100 200 Z" stroke="#c5f82a" stroke-opacity="0.3" fill="none"/>
+  <path d="M450 150 L550 100 L600 200 L500 250 Z" stroke="#c5f82a" stroke-opacity="0.3" fill="none"/>
+  <path d="M300 300 L400 250 L450 350 L350 380 Z" stroke="#c5f82a" stroke-opacity="0.3" fill="none"/>
+</svg>
