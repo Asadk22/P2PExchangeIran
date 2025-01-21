@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import Dispute from '@/lib/models/Dispute';
 import connectDB from '@/lib/db';
 
-export async function GET(req: Request) {
+export async function GET(req: any) {
   try {
     const session = await getServerSession();
     if (!session?.user?.isAdmin) {
