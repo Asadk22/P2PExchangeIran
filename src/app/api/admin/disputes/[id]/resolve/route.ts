@@ -49,10 +49,10 @@ export async function POST(
     });
 
     // Update trade status
-    const tradeId = new mongoose.Types.ObjectId(dispute?.trade._id);
-    await Trade.findByIdAndUpdate(tradeId, {
-      status: resolution === 'buyer' ? 'completed' : 'cancelled',
-    });
+    // const tradeId = new mongoose.Types.ObjectId(dispute?.trade._id);
+    // await Trade.findByIdAndUpdate(tradeId, {
+    //   status: resolution === 'buyer' ? 'completed' : 'cancelled',
+    // });
 
     return new NextResponse('Dispute resolved', { status: 200 });
   } catch (error) {
