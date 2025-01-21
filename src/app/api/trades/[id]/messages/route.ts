@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { ObjectId } from 'mongodb';
 import connectDB from '@/lib/db';
@@ -10,9 +10,11 @@ import { getIO } from '@/lib/socket';
 export const runtime = 'nodejs';
 
 export async function GET(
-  req: Request,
-  context: { params: { id: string } }
+  // req: Request,
+  req: any,
+  // context: { params: { id: string } }
 ) {
+  const  context : any   = req.nextUrl.pathname.split('/').pop();
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.id) {
@@ -92,9 +94,11 @@ export async function GET(
 }
 
 export async function POST(
-  req: Request,
-  context: { params: { id: string } }
+  // req: Request,
+  req: any,
+  // context: { params: { id: string } }
 ) {
+  const  context : any   = req.nextUrl.pathname.split('/').pop(); 
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.id) {

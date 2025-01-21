@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 import connectDB from '@/lib/db';
@@ -6,9 +6,11 @@ import Trade from '@/lib/models/Trade';
 import User from '@/lib/models/User';
 
 export async function POST(
-  request: Request,
-  { params }: { params: { id: string } }
+  // request: Request,
+  request: NextRequest,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any   = request.nextUrl.pathname.split('/').pop(); 
   try {
     const session = await getServerSession(authOptions);
     
@@ -22,7 +24,7 @@ export async function POST(
     await connectDB();
     console.log('Database connected');
 
-    const trade = await Trade.findById(params.id);
+    const trade:any = await Trade.findById(params.id);
     
     if (!trade) {
       return NextResponse.json(

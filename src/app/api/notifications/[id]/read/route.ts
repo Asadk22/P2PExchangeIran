@@ -1,13 +1,15 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 import connectDB from '@/lib/db';
 import Notification from '@/lib/models/Notification';
 
 export async function POST(
-  req: Request,
-  { params }: { params: { id: string } }
+  // req: Request,
+  req: any,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any   = req.nextUrl.pathname.split('/').pop(); 
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.id) {

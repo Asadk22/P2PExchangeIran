@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import { useSession } from 'next-auth/react';
 import { io, Socket } from 'socket.io-client';
 import { Button } from '@/components/ui/button';
@@ -136,5 +136,14 @@ export default function TradeChat({ tradeId, messages: initialMessages }: TradeC
         </form>
       </CardContent>
     </Card>
+  );
+}
+
+// Page component wrapped in Suspense to handle `useSearchParams`
+export default function TradeChatPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TradeChat tradeId="12345" messages={[]} />
+    </Suspense>
   );
 }

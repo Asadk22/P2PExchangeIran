@@ -9,7 +9,7 @@ export async function POST() {
     await connectDB();
 
     // Create a sample user if not exists
-    let user = await User.findOne({ email: 'demo@example.com' });
+    let user: any = await User.findOne({ email: 'demo@example.com' });
     if (!user) {
       const hashedPassword = await bcrypt.hash('demo123', 10);
       user = await User.create({

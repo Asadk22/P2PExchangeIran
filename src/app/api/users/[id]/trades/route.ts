@@ -1,14 +1,17 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import connectDB from '@/lib/db';
 import Trade from '@/lib/models/Trade';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 
 export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
+  // req: Request,
+  req:NextRequest,
+  // { params }: { params: { id: string } }
 ) {
-  console.log(`[GET] /api/users/${params.id}/trades - Started`);
+  const params:any = req.nextUrl.pathname.split('/').pop();
+  // const  params : any = req.nextUrl.pathname.split('/').pop();
+  // console.log(`[GET] /api/users/${params.id}/trades - Started`);
   try {
     const session = await getServerSession(authOptions);
     console.log('Session:', JSON.stringify(session?.user, null, 2));

@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const messageSchema = new mongoose.Schema({
+  
   sender: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -21,6 +22,11 @@ const messageSchema = new mongoose.Schema({
 });
 
 const tradeSchema = new mongoose.Schema({
+  trade: {
+    type: mongoose.Schema.Types.ObjectId,
+    enum:{},
+    ref: 'Trade', // Reference to the 'Trade' model
+  },
   type: {
     type: String,
     enum: ['buy', 'sell'],
@@ -112,7 +118,7 @@ tradeSchema.pre('save', function(next) {
   if (!this.seller && !this.userId) {
     next(new Error('Either seller or userId must be set'));
   }
-  this.updatedAt = new Date();
+  // this.updatedAt = new Date();
   next();
 });
 

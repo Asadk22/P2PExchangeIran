@@ -51,7 +51,7 @@ export async function GET() {
       completedAt: { $gte: thirtyDaysAgo }
     });
 
-    const volume30d = trades.reduce((sum, trade) => sum + trade.price, 0);
+    const volume30d = trades.reduce((sum: any, trade: any) => sum + trade.price, 0);
 
     // Get reputation (placeholder - implement your own logic)
     const reputation = 4.9; // Placeholder value

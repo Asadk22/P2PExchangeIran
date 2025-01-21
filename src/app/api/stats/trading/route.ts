@@ -19,7 +19,7 @@ export async function GET() {
     }).sort({ createdAt: -1 });
 
     // Calculate total trading volume
-    const tradingVolume = trades.reduce((sum, trade) => sum + trade.amount, 0);
+    const tradingVolume = trades.reduce((sum: any, trade) => sum + trade.amount, 0);
 
     // Get successful trades
     const successfulTrades = trades.filter(

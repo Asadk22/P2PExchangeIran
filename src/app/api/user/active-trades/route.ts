@@ -18,7 +18,7 @@ export async function GET() {
     await connectDB();
 
     // Find trades where the user is either seller or buyer
-    const trades = await Trade.find({
+    const trades:any = await Trade.find({
       $or: [
         { seller: session.user.id },
         { userId: session.user.id },

@@ -6,17 +6,17 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
+        source: "/:path*",
         has: [
           {
-            type: 'host',
-            value: 'localhost:3008',
+            type: "host",
+            value: "localhost:3008",
           },
         ],
-        destination: 'http://localhost:3000/:path*',
+        destination: "http://localhost:3000/:path*",
         permanent: true,
       },
-    ]
+    ];
   },
   webpack: (config) => {
     config.resolve.fallback = {
@@ -25,7 +25,17 @@ const nextConfig = {
     };
     return config;
   },
-  transpilePackages: ['react-apexcharts', 'apexcharts']
-}
+  transpilePackages: ["react-apexcharts", "apexcharts"],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

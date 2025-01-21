@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { ObjectId } from 'mongodb';
 import Trade from '@/lib/models/Trade';
@@ -7,9 +7,11 @@ import connectDB from '@/lib/db';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 
 export async function GET(
-  req: Request,
-  { params }: { params: { id: string } }
+  // req: Request,
+  req: any,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any  = req.nextUrl.pathname.split('/').pop();
   try {
     const session = await getServerSession(authOptions);
     
@@ -89,9 +91,10 @@ export async function GET(
 }
 
 export async function PUT(
-  req: Request,
-  { params }: { params: { id: string } }
+  req: any,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any = req.nextUrl.pathname.split('/').pop();
   try {
     const session = await getServerSession(authOptions);
     
@@ -104,7 +107,7 @@ export async function PUT(
 
     await connectDB();
 
-    const trade = await Trade.findById(params.id);
+    const trade:any = await Trade.findById(params.id);
     
     if (!trade) {
       return NextResponse.json(

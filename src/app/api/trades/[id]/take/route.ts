@@ -1,12 +1,14 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import Trade from '@/lib/models/Trade';
 import connectDB from '@/lib/db';
 
 export async function POST(
-  req: Request,
-  { params }: { params: { id: string } }
+  // req: Request,
+  req: any,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any   = req.nextUrl.pathname.split('/').pop();
   try {
     const session = await getServerSession();
     if (!session?.user) {
@@ -15,7 +17,7 @@ export async function POST(
 
     await connectDB();
 
-    const trade = await Trade.findById(params.id);
+    const trade:any = await Trade.findById(params.id);
     if (!trade) {
       return NextResponse.json({ error: 'Trade not found' }, { status: 404 });
     }

@@ -53,7 +53,7 @@ export async function POST() {
     for (let i = 0; i < 10; i++) {
       try {
         // Randomly select seller
-        const seller = users[Math.floor(Math.random() * users.length)];
+        const seller:any = users[Math.floor(Math.random() * users.length)];
         console.log('Selected seller:', { id: seller._id, email: seller.email });
         
         // Select crypto type and calculate amount and price

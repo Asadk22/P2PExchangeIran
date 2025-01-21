@@ -5,9 +5,10 @@ import connectDB from '@/lib/db';
 import Trade from '@/lib/models/Trade';
 
 export async function GET(
-  req: NextRequest,
-  { params }: { params: { id: string } }
+  req: any,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any   = req.nextUrl.pathname.split('/').pop();
   const session = await getServerSession(authOptions);
   if (!session?.user) {
     return new NextResponse('Unauthorized', { status: 401 });

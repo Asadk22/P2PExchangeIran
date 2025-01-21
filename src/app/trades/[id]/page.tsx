@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { StarFilledIcon } from '@radix-ui/react-icons';
@@ -35,16 +35,20 @@ interface Trade {
     successRate: number;
     createdAt: string;
   };
-  buyer?: {
+  buyer?: Partial<{
     _id: string;
     username: string;
-    totalTrades?: number;
-    successRate?: number;
-    createdAt?: string;
-  };
+    totalTrades: number;
+    successRate: number;
+    createdAt: string;
+  }>;
 }
 
-export default function TradePage({ params }: { params: { id: string } }) {
+type Props = {
+  params: { id: string };
+};
+
+function TradeContent({ params }: any) {
   const router = useRouter();
   const { data: session, status } = useSession({
     required: true,
@@ -52,6 +56,7 @@ export default function TradePage({ params }: { params: { id: string } }) {
       router.push('/');
     },
   });
+
   const [trade, setTrade] = useState<Trade | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -68,7 +73,7 @@ export default function TradePage({ params }: { params: { id: string } }) {
         setError(null);
         console.log('Fetching trade:', params.id);
         const res = await fetch(`/api/trades/${params.id}`, {
-          credentials: 'include'
+          credentials: 'include',
         });
 
         if (!res.ok) {
@@ -104,8 +109,8 @@ export default function TradePage({ params }: { params: { id: string } }) {
         method: 'POST',
         credentials: 'include',
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
 
       if (!res.ok) {
@@ -154,125 +159,64 @@ export default function TradePage({ params }: { params: { id: string } }) {
 
   return (
     <div className="container mx-auto py-6 space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold">
-            {isUserBuyer ? 'Buy' : 'Sell'}
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Trade ID: {trade._id}
-          </p>
-        </div>
-        <Badge variant={
-          trade.status === 'completed' ? 'success' :
-          trade.status === 'cancelled' ? 'destructive' :
-          'default'
-        }>
-          {trade.status}
-        </Badge>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <h2 className="text-lg font-semibold mb-4">Trade Details</h2>
-          <dl className="space-y-4">
-            <div>
-              <dt className="text-sm text-muted-foreground">Amount</dt>
-              <dd className="text-2xl font-bold">{trade.amount} {trade.assetType}</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-muted-foreground">Price</dt>
-              <dd>{trade.price}</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-muted-foreground">Payment Method</dt>
-              <dd>{trade.paymentMethod}</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-muted-foreground">Location</dt>
-              <dd>{trade.location}</dd>
-            </div>
-            {trade.terms && (
-              <div>
-                <dt className="text-sm text-muted-foreground">Terms</dt>
-                <dd>{trade.terms}</dd>
-              </div>
-            )}
-          </dl>
-        </Card>
-
-        <Card className="p-6">
-          <h2 className="text-lg font-semibold mb-4">
-            {isUserBuyer ? 'Seller' : 'Buyer'} Information
-          </h2>
+      <Card>
+        <CardHeader>
+          <CardTitle>Trade Details</CardTitle>
+        </CardHeader>
+        <CardContent>
           <div className="space-y-4">
-            <div className="flex items-center gap-4">
+            <div className="flex justify-between items-center">
+              <h3 className="text-xl font-bold">{trade.type === 'buy' ? 'Buy' : 'Sell'} {trade.assetType}</h3>
+              <Badge variant="outline" className="capitalize">{trade.status}</Badge>
+            </div>
+            <p className="text-gray-600">{trade.amount} at {trade.price} per unit</p>
+            <p className="text-gray-600">Payment Method: {trade.paymentMethod}</p>
+            <p className="text-gray-600">Location: {trade.location}</p>
+            {trade.terms && <p className="text-gray-600">Terms: {trade.terms}</p>}
+          </div>
+        </CardContent>
+      </Card>
+
+      <div className="space-y-4">
+        <Card>
+          <CardHeader>
+            <CardTitle>Seller</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center space-x-4">
               <Avatar>
-                <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${isUserBuyer ? trade.seller.username : trade.buyer?.username}`} />
-                <AvatarFallback>{isUserBuyer ? trade.seller.username[0] : trade.buyer?.username[0]}</AvatarFallback>
+                <AvatarImage src={`/avatars/${trade.seller._id}.jpg`} alt={trade.seller.username} />
+                <AvatarFallback>{trade.seller.username.charAt(0).toUpperCase()}</AvatarFallback>
               </Avatar>
               <div>
-                <div className="font-medium">
-                  {isUserBuyer ? trade.seller.username : trade.buyer?.username}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Member since {new Date(isUserBuyer ? trade.seller.createdAt : trade.buyer?.createdAt).toLocaleDateString()}
-                </div>
+                <h4 className="text-lg">{trade.seller.username}</h4>
+                <p className="text-sm text-gray-600">Total Trades: {trade.seller.totalTrades}</p>
+                <p className="text-sm text-gray-600">Success Rate: {trade.seller.successRate}%</p>
               </div>
             </div>
-            <div>
-              <div className="text-sm text-muted-foreground">Total Trades</div>
-              <div>{isUserBuyer ? trade.seller.totalTrades : trade.buyer?.totalTrades}</div>
-            </div>
-            <div>
-              <div className="text-sm text-muted-foreground">Success Rate</div>
-              <div className="font-medium flex items-center">
-                {isUserBuyer ? trade.seller.successRate : trade.buyer?.successRate}% 
-                <StarFilledIcon className="h-4 w-4 text-yellow-400 ml-1" />
-              </div>
-            </div>
-          </div>
+          </CardContent>
         </Card>
 
-        <Card className="p-6 md:col-span-2">
-          <h2 className="text-lg font-semibold mb-4">Actions</h2>
-          <div className="flex gap-4">
-            {canChat && (
-              <Button
-                asChild
-                className="flex-1"
-                variant="default"
-              >
-                <Link href={`/dashboard/messages?trade=${trade._id}`}>
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Open Chat
-                </Link>
-              </Button>
-            )}
-            {canJoinTrade && (
-              <Button
-                onClick={handleJoinTrade}
-                className="flex-1"
-                variant="default"
-              >
-                Join Trade
-              </Button>
-            )}
-            {(isUserSeller || isUserBuyer) && (
-              <Button
-                asChild
-                className="flex-1"
-                variant="default"
-              >
-                <Link href={`/dashboard/payment/${trade._id}`}>
-                  <CreditCard className="w-4 h-4 mr-2" />
-                  Go to Payment
-                </Link>
-              </Button>
-            )}
-          </div>
-        </Card>
+        {canJoinTrade && (
+          <Button onClick={handleJoinTrade}>Join Trade</Button>
+        )}
+
+        {canChat && (
+          <Link href={`/messages/${trade._id}`} passHref>
+            <Button variant="outline" 
+            // leftIcon={<MessageCircle />}
+            >Start Chat</Button>
+          </Link>
+        )}
       </div>
     </div>
+  );
+}
+
+export function TradePage({ params }: any) {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8">Loading...</div>}>
+      <TradeContent params={params} />
+    </Suspense>
   );
 }

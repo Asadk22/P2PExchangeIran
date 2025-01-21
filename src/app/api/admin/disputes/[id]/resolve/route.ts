@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
 import { connectDB } from '@/lib/db';
@@ -7,9 +7,11 @@ import Trade from '@/lib/models/Trade';
 import mongoose from 'mongoose';
 
 export async function POST(
-  req: Request,
-  { params }: { params: { id: string } }
+  // req: Request,
+  req: any,
+  // { params }: { params: { id: string } }
 ) {
+  const  params : any   = req.nextUrl.pathname.split('/').pop(); 
   try {
     const session = await getServerSession(authOptions);
     if (!session?.user?.id) {
@@ -24,7 +26,8 @@ export async function POST(
 
     // Convert string ID to ObjectId
     const disputeId = new mongoose.Types.ObjectId(params.id);
-    const dispute = await Dispute.findById(disputeId)
+    // const disputeId = new mongoose.Schema.ObjectId(params.id);
+    const dispute: any = await Dispute.findById(disputeId)
       .populate('trade')
       .populate('initiator')
       .populate('respondent')

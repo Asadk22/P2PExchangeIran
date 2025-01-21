@@ -1,16 +1,36 @@
 'use client';
 
-import { useState } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useState, Suspense } from 'react';
+import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -26,17 +46,15 @@ const tradeFormSchema = z.object({
 
 type TradeFormValues = z.infer<typeof tradeFormSchema>;
 
-export default function CreateTradePage() {
+function TradeForm({ defaultType }: { defaultType: 'buy' | 'sell' }) {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const searchParams = useSearchParams();
   const { toast } = useToast();
-  const defaultType = searchParams.get('type') || 'buy';
 
   const form = useForm<TradeFormValues>({
     resolver: zodResolver(tradeFormSchema),
     defaultValues: {
-      type: defaultType as 'buy' | 'sell',
+      type: defaultType,
       cryptocurrency: 'BTC',
       amount: '',
       price: '',
@@ -252,5 +270,13 @@ export default function CreateTradePage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+export default function CreateTradePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TradeForm defaultType="buy" />
+    </Suspense>
   );
 }

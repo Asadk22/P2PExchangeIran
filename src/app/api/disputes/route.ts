@@ -6,7 +6,7 @@ import User from '@/lib/models/User';
 import connectDB from '@/lib/db';
 import { AutoDisputeResolver } from '@/lib/services/AutoDisputeResolver';
 
-export async function POST(req: Request) {
+export async function POST(req: any) {
   try {
     const session = await getServerSession();
     if (!session?.user) {
@@ -55,8 +55,8 @@ export async function POST(req: Request) {
       );
     }
 
-    const initiator = await User.findById(session.user.id);
-    const respondent = await User.findById(
+    const initiator: any = await User.findById(session.user.id);
+    const respondent: any = await User.findById(
       trade.buyer._id.toString() === session.user.id
         ? trade.seller._id
         : trade.buyer._id

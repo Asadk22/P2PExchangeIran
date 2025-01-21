@@ -10,7 +10,7 @@ interface BlogArticleProps {
   slug: string
 }
 
-export default function BlogArticle({ slug }: BlogArticleProps) {
+export default function BlogArticle() {
   // In a real application, you would fetch the article data based on the slug
   const article = {
     title: "Understanding P2P Exchange: A Beginner's Guide",
